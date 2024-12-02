@@ -30,7 +30,7 @@ export async function run(): Promise<void> {
         data: error.key
       }
       cells[1] = {
-        data: error.key
+        data: error.message
       }
       rows.push(cells);
     });
