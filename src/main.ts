@@ -13,6 +13,7 @@ export async function run(): Promise<void> {
     core.debug(`Waiting ${ms} milliseconds ... Geoff is lovely!`)
 
     core.summary.addList(["Geoff", "is", "great!"]);
+    core.summary.write();
 
     // Log the current timestamp, wait, then log the new timestamp
     core.debug(new Date().toTimeString())
