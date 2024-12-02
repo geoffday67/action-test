@@ -1,5 +1,6 @@
 import * as core from '@actions/core'
 import { wait } from './wait'
+import { SummaryTableCell, SummaryTableRow } from '@actions/core/lib/summary';
 
 /**
  * The main function for the action.
@@ -21,10 +22,20 @@ export async function run(): Promise<void> {
 
   data.forEach(tag => {
     core.summary.addHeading(tag.tag, 3);
-  
+    let rows: SummaryTableRow[] = [];
+ 
     tag.errors.forEach(error => {
-      core.summary.addHeading(error.message, 4);
-    })
+      let cells: SummaryTableCell[] = [];
+      cells[0] = {
+        data: error.key
+      }
+      cells[1] = {
+        data: error.key
+      }
+      rows.push(cells);
+    });
+
+    core.summary.addTable(rows);
   });
 
   core.summary.write();
