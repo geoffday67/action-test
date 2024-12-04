@@ -20,7 +20,9 @@ jobs:
     steps:
       - name: What
         id: what
-        run: ls -al
+        run: |
+          pwd
+          ls -al
 
       - name: Setup Node.js
         id: setup-node
