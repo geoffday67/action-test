@@ -18,6 +18,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: What
+        id: what
+        run: ls -al
+
       - name: Setup Node.js
         id: setup-node
         uses: actions/setup-node@v4
