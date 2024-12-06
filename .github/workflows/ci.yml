@@ -40,4 +40,4 @@ jobs:
         id: test-action
         uses: ./
         with:
-          file: 'some file'
+          file: './phrase-report.json'
