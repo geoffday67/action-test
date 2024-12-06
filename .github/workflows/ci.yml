@@ -39,3 +39,5 @@ jobs:
       - name: Test Local Action
         id: test-action
         uses: ./
+        with:
+          file: 'some file'

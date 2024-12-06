@@ -18,7 +18,8 @@ type PhraseTag = {
 }
 
 export async function run(): Promise<void> {
-  const data: PhraseTag[] = require('./phrase-report.json')
+  const filename = core.getInput("file")
+  const data: PhraseTag[] = require(filename)
 
   if (data.length == 0) {
     core.summary.addHeading("No problems", 3)
