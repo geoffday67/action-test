@@ -36,6 +36,10 @@ jobs:
         id: build
         run: npm run bundle
 
+      - name: What?
+        id: what
+        run: ls -al
+
       - name: Test Local Action
         id: test-action
         uses: ./
